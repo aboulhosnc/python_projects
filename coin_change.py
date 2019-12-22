@@ -19,28 +19,38 @@ class Student():
         print("..........................................")
 
 
- 
- 
-#goal is to minimize coins 
+
+
+#goal is to minimize coins
 
 def coin_amount(input):
+
+
     print("You have {} in total change".format(input))
     return input
 
 def quarters_left(input):
     quarters = (input // 25)
     change = (input % 25)
+    print("You have {} quarters as change".format(quarters))
     return quarters, change
 
 def dimes_left(input):
     dimes = (input // 10)
     change = (input % 10)
+    print("You have {} dimes as change".format(dimes))
     return dimes, change
 
 def nickel_left(input):
-    nickel = (input // 5)
+    nickels = (input // 5)
     change = (input % 5)
-    return nickel, change
+    print("You have {} nickels as change".format(nickels))
+    return nickels, change
+
+def pennies_left(input):
+    pennies = input
+    print("You have {} pennies as change".format(pennies))
+    return pennies
 
 def coint_count(input):
     print(input)
@@ -55,20 +65,23 @@ def main():
 
     exact_amount = coin_amount(int(input('Enter in exact change : \n')))
 
+
+
+
     quarters, exact_amount = quarters_left(exact_amount)
 
     dimes, exact_amount = dimes_left(exact_amount)
     # nickels, exact_amount = nickel_left(exact_amount)
-
-    pennies = exact_amount
+    pennies = pennies_left(exact_amount)
+    # pennies = exact_amount
 
     # sum = pennies + dimes + nickels + quarters
     sum = pennies + dimes  + quarters
 
-    print("You have {} quarters as change".format(quarters))
-    print("You have {} dimes as change".format(dimes))
-    # print("You have {} nickels as change".format(nickels))
-    print("You have {} pennies as change".format(pennies))
+
+
+
+
 
     print("total number of coins is {} ".format(sum))
 
