@@ -69,7 +69,6 @@ def main():
 
 
     quarters, exact_amount = quarters_left(exact_amount)
-
     dimes, exact_amount = dimes_left(exact_amount)
     # nickels, exact_amount = nickel_left(exact_amount)
     pennies = pennies_left(exact_amount)
