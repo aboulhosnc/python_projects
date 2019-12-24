@@ -23,11 +23,23 @@ class Student():
 
 #goal is to minimize coins
 
-def coin_amount(input):
+def coin_amount(exact_amount, order_list):
+    print("You have {} in total change".format(exact_amount))
 
+    for i in order_list:
+        if(order_list[i] == 1):
+            quarters, exact_amount = quarters_left(exact_amount)
+        if(order_list[i] == 2):
+            dimes, exact_amount = dimes_left(exact_amount)
+        # if(order_list[i] == 3):
+            # nickels, exact_amount = nickel_left(exact_amount)
 
-    print("You have {} in total change".format(input))
-    return input
+        if(order_list[i] == 0):
+            pennies = pennies_left(exact_amount)
+
+    # sum = pennies + dimes + nickels + quarters
+    sum = pennies + dimes  + quarters
+    return sum
 
 def quarters_left(input):
     quarters = (input // 25)
@@ -63,26 +75,38 @@ def main():
     chady = Student("Chady Aboulhosn", "NO Class","Coin Change" , d3)
     chady.show()
 
-    exact_amount = coin_amount(int(input('Enter in exact change : \n')))
+    exact_amount = (int(input('Enter in exact change : \n') ))
+    sum = []
+    order_list = []
+    for i in range (4):
+        order_list = [(i + 1) % 4, (i + 2) % 4, (i + 3) % 4, (i + 4) % 4 ]
+        sum.append( coin_amount(exact_amount, order_list))
+        # print(order_list)
 
 
+    # test_1 = 1 % 4
+    # test_2 = 2 % 4
+    # test_3 = 3 % 4
+    # test_4 = 4 % 4
+    # # test_0 = 4 % 0
+    #
+    # # print(test_0)
+    # print(test_1)
+    # print(test_2)
+    # print(test_3)
+    # print(test_4)
 
 
-    quarters, exact_amount = quarters_left(exact_amount)
-    dimes, exact_amount = dimes_left(exact_amount)
-    # nickels, exact_amount = nickel_left(exact_amount)
-    pennies = pennies_left(exact_amount)
     # pennies = exact_amount
 
-    # sum = pennies + dimes + nickels + quarters
-    sum = pennies + dimes  + quarters
 
 
 
 
 
 
-    print("total number of coins is {} ".format(sum))
+
+    print("total number of coins is {} ".format(min(sum)))
 
 
 
