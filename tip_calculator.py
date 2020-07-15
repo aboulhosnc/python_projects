@@ -2,6 +2,7 @@
 
 
 def tip_calulator(total, people, tip):
+    """ This is a tip calculator """
     tip = tip / 100
     total = total / people
     tip_amount = total * tip
