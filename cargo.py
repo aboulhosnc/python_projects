@@ -39,7 +39,7 @@ def main():
     # print(will_fit(["M", "L", "L", "M"], [56, 62, 84, 90])) # will be 600 true
     # will_fit(["L", "L", "M"], [56, 62, 84, 90]) #true
     # will_fit(["S", "S", "S", "S", "L"], [40, 50, 60, 70 , 80, 90, 200]) #false
-    print(will_fit(["S", "L"], [73 , 87, 95, 229])) #false 
+    will_fit(["S", "L"], [73 , 87, 95, 229]) #false 
     # will_fit(["L", "L", "L", "L"], [54, 54, 200, 200, 200]) # true
 
     
