@@ -27,9 +27,8 @@ def will_fit(holds, cargo):
     if (holds_sum >= cargo_sum):
         bool_verdict = True
 
-    return True if holds_sum > cargo_sum else False
     # print(holds_sum,cargo_sum,bool_verdict)
-    # return holds_sum,cargo_sum, bool_verdict
+    return holds_sum,cargo_sum, bool_verdict
 
     
 
